@@ -19,7 +19,7 @@ public:
 		}
 		else
 		{
-			height = 0;
+			height = 1;
 		}
 	}
 
@@ -31,7 +31,7 @@ public:
 		}
 		else
 		{
-			width= 0;
+			width= 1;
 		}
 	}
 	void set_depth(float D)
@@ -42,7 +42,7 @@ public:
 		}
 		else
 		{
-			depth = 0;
+			depth = 1;
 		}
 	}
 	/////////////////////////////////accessor function means geter//////////////////
@@ -61,9 +61,7 @@ public:
 	///////////////////////////////paramitrized constructer ////////////////////////
 	Cuboids(float H, float W, float D)
 	{
-		void set_height();
-		void set_width();
-		void set_depth();
+		
 		height = H;
 		width = W;
 		depth = D;
@@ -84,9 +82,7 @@ public:
 	/////////////////////////////copy constructer ////////////////////////
 	Cuboids(const Cuboids& cub)
 	{
-		void set_height();
-		void set_width();
-		void set_depth();
+		
 		height = cub.height;
 		width = cub.width;
 		depth = cub.width;
@@ -100,9 +96,7 @@ public:
 	////////////////////////implimentation/////////////////////
 	void setCuboids(float h, float w, float d)
 	{
-		height = h;
-		width = w;
-		depth = d;
+		
 		 set_height(height);
 		 set_width(width);
 		 set_depth(depth);
