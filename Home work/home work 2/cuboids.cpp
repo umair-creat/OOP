@@ -13,7 +13,7 @@ public:
 	//////////////////mutators function means seter function///////////////////////////
 	void set_height(float H)
 	{
-		if (H > 0.0&& H < 35.00)
+		if (H > 0&& H < 35.0)
 		{
 			height = H;
 		}
@@ -25,7 +25,7 @@ public:
 
 	void set_width(float W)
 	{
-		if (W > 0 && W< 35.00)
+		if (W > 0 && W < 35.0)
 		{
 			width= W;
 		}
@@ -36,7 +36,7 @@ public:
 	}
 	void set_depth(float D)
 	{
-		if (D> 0 && D < 35.00)
+		if (D > 0 && D < 35.0)
 		{
 			depth = D;
 		}
@@ -96,10 +96,9 @@ public:
 	////////////////////////implimentation/////////////////////
 	void setCuboids(float h, float w, float d)
 	{
-		
-		 set_height(height);
-		 set_width(width);
-		 set_depth(depth);
+		height = h;
+		width = w;
+		depth = d;
 	}
 	void getCuboids()
 	{
@@ -122,54 +121,47 @@ public:
 	}
 	float getSurfaceArea()
 	{
-		set_height(height);
-		set_width(width);
-		set_depth(depth);
-		float surface = 0.0;
-		surface = 2 * (height * width) + 2 * (height * depth) + 2 * (width * depth);
-		return surface;
+		
+		return	 2 * (height * width) + 2 * (height * depth) + 2 * (width * depth);
+		 
 	}
 	float getVolume()
 	{
-		set_height(height);
-		set_width(width);
-		set_depth(depth);
-		float volume = 0.0;
-		volume = height * width * depth;
-		return volume;
+		
+		
+		return  height * width * depth;
 	}
 	float getspaceDiagonal()
 	{
-		set_height(height);
-		set_width(width);
-		set_depth(depth);
-		float diagonal = 0.0;
-		diagonal = sqrt((height * height) + (width * width) + (depth * depth));
-		return diagonal;
+		
+	
+		return sqrt((height * height) + (width * width) + (depth * depth));
+		 
 	}
 	void putCuboidsinfo(float surfacearea, float volume, float diagonal)
 	{
 		cout << "HEIGHT\t\tWIDTH\t\tDEPTH" << endl;
 		cout << height << "\t\t" << width << "\t\t" << depth << endl;
 		cout << "Surface-area\t" << "volume\t" << "spaceDiagonal" << endl;
-		cout << surfacearea << "\t\t" << volume << "\t\t" << diagonal << endl;
+		cout << surfacearea << "\t\t" << volume << "\t" << diagonal << endl;
 	}
 };
 	int main()
 	{
-		float surface = 0.0, volume = 0.0, diagonal = 0.0;
+
 		Cuboids exp1, exp2, exp3;
-		float height1 = 70, width1 = 35, depth1 = 30;
+		float height1 = 20, width1 = 24, depth1 = 20;
 		exp1.setCuboids(height1, width1, depth1);
 		exp1.putCuboids();
 		cout << endl;
-		/*exp2.getCuboids();
-		exp2.putCuboids();                                  //Test the functionality
+		exp1.putCuboidsinfo(exp1.getSurfaceArea(), exp1.getVolume(), exp1.getspaceDiagonal());
 		cout << endl;
-		surface = exp2.getSurfaceArea();
-		volume = exp2.getVolume();
-		diagonal = exp2.getspaceDiagonal();
-		exp2.putCuboidsinfo(surface, volume, diagonal);
+		cout << "Another exemple value get by user:" << endl;
+		exp3.getCuboids();
+		exp3.putCuboidsinfo(exp3.getSurfaceArea(), exp3.getVolume(), exp3.getspaceDiagonal());
+		/*                                  //Test the functionality
+		
+		
 		exp3.set_height(33.0);
 		exp3.set_width(34.0);
 		exp3.set_depth(23.79);
